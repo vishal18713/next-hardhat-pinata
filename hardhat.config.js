@@ -1,4 +1,5 @@
 require("@nomicfoundation/hardhat-toolbox");
+const hardhatWeb3 = require("@nomicfoundation/hardhat-web3-v4");
 
 /** @type import('hardhat/config').HardhatUserConfig */
 module.exports = {
