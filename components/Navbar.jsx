@@ -23,20 +23,21 @@ const Nav = () => {
   };
 
   return (
-    <nav className="flex-between w-full mb-16 pt-3 gap-10 pl-16 pr-16">
+    <nav className="flex-between w-full pb-4 pt-4 gap-10 pl-24 pr-24 bg-zinc-900 text-white">
       <Link href="/" className="flex gap-2 flex-center">
-        <p className="logo_text">Noktua</p>
+        <p className="logo_text text-2xl">Noktua</p>
       </Link>
-      <div className="flex-between ml-8 mr-4 gap-4">
+      <div className="flex-between gap-8">
         <p className="logo_text">Home</p>
         <p className="logo_text">Drop</p>
         <p className="logo_text">Stats</p>
         <p className="logo_text">Create</p>
       </div>
-      <input type="text" placeholder="Search..." required className="search_input30 peer" />
+      <input type="text" placeholder="Search..." required className="search_input30 peer mr-24" />
       <button className="black_btn" onClick={connectMetamask}>
         Login
       </button>
+      <Link href='/profile'> <div className="w-8 h-8 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 ... rounded-full"></div></Link>
     </nav>
   );
 };
