@@ -105,8 +105,15 @@
   @apply mt-5 text-lg text-gray-600 sm:text-xl max-w-2xl;
 }
 
+.search_input {
+  @apply block w-full rounded-md border border-gray-200 bg-white py-2.5 font-satoshi pl-5 pr-12 text-sm shadow-lg font-medium focus:border-black focus:outline-none focus:ring-0;
+}
+.search_input_zinc {
+  @apply block w-[50%] rounded-lg border-[2px] border-zinc-700 bg-zinc-900 py-[7px] font-satoshi pl-5 text-lg shadow-lg font-medium text-white focus:border-zinc-700 focus:ring-0;
+}
+
 .search_input30 {
-  @apply block w-[30%] rounded-md border border-gray-200 bg-white py-2.5 font-satoshi pl-5 pr-12 text-sm shadow-lg font-medium focus:border-black focus:outline-none focus:ring-0;
+  @apply block w-[30%] rounded-md border-zinc-700 bg-zinc-800 py-2.5 font-satoshi pl-5 pr-12 text-sm shadow-lg font-medium focus:border-black focus:outline-none focus:ring-0;
 }
 
 .copy_btn {
@@ -137,7 +144,7 @@
 
 /* Nav Component */
 .logo_text {
-  @apply max-sm:hidden font-satoshi font-semibold text-lg text-black tracking-wide;
+  @apply max-sm:hidden font-satoshi font-semibold tracking-wide;
 }
 
 .dropdown {
@@ -167,4 +174,15 @@
 
 .flex-between {
   @apply flex justify-between items-center;
+}
+
+.swiper-navBtn {
+  @apply text-black h-10 w-10 bg-white rounded-full;
+}
+.swiper-navBtn::before,
+.swiper-navBtn::after {
+  @apply text-lg;
+}
+.swiper-pagination-bullet {
+  @apply bg-black;
 }
