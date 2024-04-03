@@ -5,6 +5,7 @@ import Image from "next/image";
 import { useEffect, useState } from "react";
 import Web3 from "web3";
 import { useRouter } from "next/router";
+import page from "../src/app/select-create/page";
 
 const Nav = () => {
 
@@ -39,7 +40,7 @@ const Nav = () => {
         <p className="logo_text">Home</p>
         <p className="logo_text">Drop</p>
         <p className="logo_text">Stats</p>
-        <p className="logo_text">Create</p>
+        <Link href='/select-create'><p className="logo_text">Create</p></Link>
       </div>
       <input type="text" placeholder="Search..." required className="search_input30 peer mr-24" />
       {connected ? (
