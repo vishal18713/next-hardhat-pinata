@@ -5,15 +5,24 @@ import Image from "next/image";
 import { useEffect, useState } from "react";
 import Web3 from "web3";
 import { useRouter } from "next/router";
+import page from "../src/app/select-create/page";
 
 const Nav = () => {
+
+  const[connected, setconnected] = useState(false);
+  const[connectedAccount,setConnectedAccount] = useState('');
+  const[id,setId] = useState(null);
+
   const connectMetamask = async () => {
     if (typeof window !== "undefined" && window.ethereum) {
       try {
         await window.ethereum.request({ method: "eth_requestAccounts" });
         const web3 = new Web3(window.ethereum);
         const accounts = await web3.eth.getAccounts();
+        setconnected(true);
         setConnectedAccount(accounts[0]);
+        const displayAddress = accounts[0]?.substr(0,7)+"..."
+        setId(displayAddress);
       } catch (error) {
         console.error("Error connecting Metamask:", error);
       }
@@ -31,12 +40,19 @@ const Nav = () => {
         <p className="logo_text">Home</p>
         <p className="logo_text">Drop</p>
         <p className="logo_text">Stats</p>
-        <p className="logo_text">Create</p>
+        <Link href='/select-create'><p className="logo_text">Create</p></Link>
       </div>
       <input type="text" placeholder="Search..." required className="search_input30 peer mr-24" />
-      <button className="black_btn" onClick={connectMetamask}>
-        Login
-      </button>
+      {connected ? (
+  <button className="black_btn"onClick={connectMetamask} >
+    {id}
+  </button>
+) : (
+  <button className="black_btn" onClick={connectMetamask}>
+    Connect to Metamask
+  </button>
+)}
+
       <Link href='/profile'> <div className="w-8 h-8 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 ... rounded-full"></div></Link>
     </nav>
   );

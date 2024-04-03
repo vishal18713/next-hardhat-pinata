@@ -80,6 +80,9 @@
 .black_btn {
   @apply rounded-full border border-black bg-black py-1.5 px-5 text-white transition-all hover:bg-white hover:text-black text-center text-sm font-inter flex items-center justify-center;
 }
+.blue_btn {
+  @apply rounded-full border border-blue-700 bg-blue-700 py-1.5 px-5 text-white transition-all hover:bg-white hover:text-black text-center text-sm font-inter flex items-center justify-center;
+}
 
 .outline_btn {
   @apply rounded-full border border-black bg-transparent py-1.5 px-5 text-black transition-all hover:bg-black hover:text-white text-center text-sm font-inter flex items-center justify-center;
@@ -110,6 +113,9 @@
 }
 .search_input_zinc {
   @apply block w-[50%] rounded-lg border-[2px] border-zinc-700 bg-zinc-900 py-[7px] font-satoshi pl-5 text-lg shadow-lg font-medium text-white focus:border-zinc-700 focus:ring-0;
+}
+.search_input_trans_create {
+  @apply block w-[70%] rounded-lg border-[2px] border-zinc-700 bg-transparent py-[7px] font-satoshi pl-5 text-lg shadow-lg font-medium text-white focus:border-zinc-700 focus:ring-0;
 }
 
 .search_input30 {
