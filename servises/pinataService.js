@@ -1,24 +1,21 @@
-// pinataService.js
 import pinataSDK from '@pinata/sdk';
+import fs from 'fs';
 
-const pinata = pinataSDK('44b504b084dcd3130539', '3368cd221c559047242967e9c9d96da4629beedb0d45aa7e746a5a46b5c4101e');
+const pinata = new pinataSDK('8d5cadf371bda7701294', '7d0fc33abadd782b2d8dc77d3cb6a18106b96801b6c448e36d443582ab62e198');
 
-export const uploadFileToIPFS = async (file) => {
+export const uploadFileToIPFS = async (filePath) => {
     try {
-        const result = await pinata.pinFileToIPFS(file);
-        return result;
+        const readableStreamForFile = fs.createReadStream(filePath);
+        const options = {
+            pinataMetadata: {
+                name: 'My File',
+                // You can add more metadata here
+            },
+        };
+        const result = await pinata.pinFileToIPFS(readableStreamForFile, options);
+        return result.IpfsHash;
     } catch (error) {
         console.error('Error uploading file to IPFS:', error);
         throw error;
     }
-}
-
-export const getFileFromIPFS = async (hash) => {
-    try {
-        const result = await pinata.pinFromIPFS(hash);
-        return result;
-    } catch (error) {
-        console.error('Error retrieving file from IPFS:', error);
-        throw error;
-    }
-}
+};
