@@ -40,6 +40,7 @@ const Nav = () => {
         <p className="logo_text">Drop</p>
         <p className="logo_text">Stats</p>
         <p className="logo_text">Create</p>
+        <Link href='/store'><p className="logo_text">Store</p></Link>
       </div>
       <input type="text" placeholder="Search..." required className="search_input30 peer mr-24" />
       {connected ? (

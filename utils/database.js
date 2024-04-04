@@ -1,15 +1,25 @@
-import mongoose from "mongoose";
+import mongoose, { mongo } from "mongoose";
 
-const connectToDB = async () => {
+let isConnected = false;
+
+const connectToDB = async() => {
+    mongoose.set('strictQuery', true);
+
+    if(isConnected){
+        console.log("MongoDB is already connected");
+        return;
+    }
     try {
         await mongoose.connect(process.env.MONGODB_URI, {
-            dbname: 'noktua',
+            dbName: "noktua",
             useNewUrlParser: true,
-            useUnifiedTopology: true,
-        });
-        console.log("MongoDB connected successfully!")
+            useUnifiedTopology: true
+        })
+ 
+        isConnected = true;
+        console.log("MongoDB connected successfully!");
     } catch (error) {
-        console.log(error)
+        console.log(error);
     }
 }
 
