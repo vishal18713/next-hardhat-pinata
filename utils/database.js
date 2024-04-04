@@ -4,11 +4,11 @@ let isConnected = false;
 
 const connectToDB = async() => {
     mongoose.set('strictQuery', true);
-
-    if(isConnected){
-        console.log("MongoDB is already connected");
-        return;
-    }
+    console.log("connected")
+    // if(isConnected){
+    //     console.log("MongoDB is already connected");
+    //     return;
+    // }
     try {
         await mongoose.connect(process.env.MONGODB_URI, {
             dbName: "noktua",
@@ -16,7 +16,7 @@ const connectToDB = async() => {
             useUnifiedTopology: true
         })
  
-        isConnected = true;
+        // isConnected = true;
         console.log("MongoDB connected successfully!");
     } catch (error) {
         console.log(error);

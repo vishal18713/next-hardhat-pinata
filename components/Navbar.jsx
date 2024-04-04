@@ -5,6 +5,7 @@ import Image from "next/image";
 import { useEffect, useState } from "react";
 import Web3 from "web3";
 import { useRouter } from "next/router";
+import connectToDB from "../utils/database";
 
 const Nav = () => {
 

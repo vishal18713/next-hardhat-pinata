@@ -12,6 +12,7 @@ const CreateUser = () => {
     const handleSubmit = async (event) => {
       event.preventDefault();
       try {
+       
         const response = await fetch('/api/users', {
           method: 'POST',
           headers: {
