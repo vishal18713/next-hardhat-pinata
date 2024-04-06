@@ -22,7 +22,7 @@ const page = () => {
                 </div>
                 <p className='text-white px-2 py-4 text-md font-medium'>Launch you NFT collection for others to mint. </p>
             </div>
-            <Link href='/create'>
+            <Link href='/code-upload'>
             <div className='w-[90%] h-28 flex-col justify-center items-start rounded-lg bg-zinc-900 my-10 py-4 px-6'>
                 <div className='w-full flex justify-start items-center gap-4'>
                 <div className='w-10 h-10 bg-black rounded-full flex justify-center items-center'><RiGalleryFill className='text-white w-4 h-4' /></div>
